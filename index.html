@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="./static/js/index.js"></script>
+        <link rel="stylesheet" href="./static/css/index.css">
+        <title>Odoo JS Training</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td colspan="2"><center><img id="image1" width="300" height="300"></center></td>
+                            <td colspan="2"><center><img id="image2" width="300" height="300"></center></td>
+                            <td colspan="2"><center><img id="image3" width="300" height="300"></center></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="title1"></td>
+                            <td colspan="2" id="title2"></td>
+                            <td colspan="2" id="title3"></td>
+                        </tr>
+                        <tr>
+                            <td>USD <b id="price1"></b></td>
+                            <td>Qty: <button>+</button> <b id='value1'>1</b> <button>-</button></td>
+                            <td>USD <b id="price2"></b></td>
+                            <td>Qty: <button>+</button> <b id='value2'>1</b> <button>-</button></td>
+                            <td>USD <b id="price3"></b></td>
+                            <td>Qty: <button>+</button> <b id='value3'>1</b> <button>-</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="addToCart(1)">Add to Cart</button></td>
+                            <td colspan="2"><button onclick="addToCart(2)">Add to Cart</button></td>
+                            <td colspan="2"><button onclick="addToCart(3)">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cart_table" border="1" style="margin-left: 250px;">
+                        <tr>
+                            <td colspan="2"><center>Cart</center></td>
+                        </tr>
+                        <tr>
+                            <td>Products</td><td>Price</td>
+                        </tr>
+                        <tr class="no_item">
+                            <td>No items listed, add something in cart</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+

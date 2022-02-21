@@ -1,3 +1,5 @@
+import { Rectangle } from './trial.js';
+
 function grabData(id) {
     return new Promise((resolve, reject) => {
         var url = `https://fakestoreapi.com/products/${id}`;
@@ -6,7 +8,7 @@ function grabData(id) {
         if (xhr.readyState === 4) {
             resolve(JSON.parse(xhr.response));
         }};
-        xhr.open("GET", url, true);
+        xhr.open("GET", url);
         xhr.send();
     });
 }
@@ -23,17 +25,21 @@ window.addEventListener('load', () => {
             var img = document.querySelector('#image'+(i+1)); img.src=datas[i].image;
         }
     });
+    const rec = new Rectangle(10,10);
+    console.log(rec.calcArea());
     
 })
 
 window.addEventListener('click', (el) => {
-    console.log(el)
+    if(el.target.id.startsWith('add')){
+        const pr_id = el.target.id.split('-')[1];
+        addToCart(pr_id);
+    }
 })
 function addToCart(pr_id){
     var pr_name = document.getElementById('title'+pr_id).innerHTML;
     var pr_cost = document.getElementById('price'+pr_id).innerHTML;
     const no_item = document.querySelector('.no_item');
-    debugger;
     if (no_item) {
         no_item.outerHTML = "";
     }
